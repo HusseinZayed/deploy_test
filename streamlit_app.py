@@ -68,6 +68,6 @@ if st.button("Submit 👇"):
                                 dep_hour_pred_scaled[0][0], airline_pred, source_pred,
                                   destination_pred, add_info_pred]])
 
-        #Price = model.predict(input_data)
+        Price = model.predict([[4,2,1,7,1.019061,2,9,6,9]])
         # Display the price as a metric
-        #st.metric("Ticket Price", int(Price))
+        st.metric("Ticket Price", int(Price))
