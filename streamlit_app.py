@@ -59,15 +59,16 @@ with col2:
         st.write(' ')
         st.write('for Departure Hour, If the minutes more than 30, Please increase the hour by 1')
         
-        dep_hour_pred_scaled = sc.fit_transform([[int(st.number_input("Departure Hour (24 format)",
-                                                                    min_value=0))]])
+        dep_hour = int(st.number_input("Departure Hour (24 format)",min_value=0))
 
 # Submit Button
 if st.button("Submit 👇"):
-        input_data = np.array([[duration_pred_scaled[0][0], stops_pred, selected_date.day, selected_date.month, 
-                                dep_hour_pred_scaled[0][0], airline_pred, source_pred,
-                                  destination_pred, add_info_pred]])
+        #input_data = np.array([[duration_pred_scaled[0][0], stops_pred, selected_date.day, selected_date.month, 
+                                #dep_hour_pred_scaled[0][0], airline_pred, source_pred,
+                                  #destination_pred, add_info_pred]])
 
-        Price = model.predict([[4,2,1,7,1.019061,2,9,6,9]])
+        input_data = np.array([[airline_pred,source_pred,destination_pred,add_info_pred,duration_pred_scaled,stops_pred, selected_date.day, selected_date.month,dep_hour]])
+
+        Price = model.predict(input_data)
         # Display the price as a metric
         st.metric("Ticket Price", int(Price))
