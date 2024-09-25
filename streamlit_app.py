@@ -68,7 +68,7 @@ if st.button("Submit 👇"):
                                   #destination_pred, add_info_pred]])
 
         #input_data = np.array([[airline_pred,source_pred,destination_pred,add_info_pred,duration_pred_scaled,stops_pred, selected_date.day, selected_date.month,dep_hour]])
-        st.write(airline_pred)
+        st.write(type(airline_pred))
         #Price = model.predict([[airline_pred,source_pred,destination_pred,add_info_pred,duration_pred_scaled,stops_pred, selected_date.day, selected_date.month,dep_hour]])
         # Display the price as a metric
         #st.metric("Ticket Price", int(Price))
