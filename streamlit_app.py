@@ -4,7 +4,6 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 import joblib
 from datetime import datetime, date
-import plotly.express as px
     
 
 df = pd.read_csv('cleaned_df.csv')
@@ -14,7 +13,7 @@ data = df.copy()
 st.set_page_config(page_title="Aviation flights fare", page_icon="✈️", layout='wide')
 
 
-#model = joblib.load('aviation_model.p')    
+model = joblib.load('aviation_model.p')    
 sc = StandardScaler()
 
     # Inputs 
